@@ -1,0 +1,9 @@
+[package]
+name = "PathTracing"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+libmath = "0.2.1"
+cgmath = "0.18.0"
+
