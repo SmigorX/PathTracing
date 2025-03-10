@@ -23,7 +23,7 @@ impl Ray {
     }
 
     pub fn get_direction(&self) -> cgmath::Vector3<f64> {
-        self.direction
+        self.direction.normalize()
     }
 
     pub fn get_origin(&self) -> cgmath::Point3<f64> {
@@ -54,16 +54,6 @@ impl Ray {
         let unit_direction: cgmath::Vector3<f64> = self.direction.normalize();
         let t: f64 = 0.5 * (unit_direction.y + 1.0);
         
-        return (cgmath::vec3(1.0, 1.0, 1.0).map(|x: f64| (x * (1.0 - t))) + cgmath::vec3(0.5, 0.7, 1.0).map(|x: f64| (x * t))).map(|x: f64| (x * 255.999) as u32);
-        
-        //let hit: f64 = Ray::hit_sphere(self, cgmath::point3(0.0, 0.3, -1.0), 0.5, self);  
-        //if hit > 0.0 {
-        //    let normal: cgmath::Vector3<f64> = (self.at(hit) - cgmath::point3(0.0, 0.3, -1.0)).map(|x: f64| ((x + 1.0) * 0.5));
-        //    return normal.map(|x: f64| (x * 255.999) as u32);
-        //}
-
-        //let height = self.direction.y * 0.5 + 1.0;
-        //let color: cgmath::Vector3<f64> = (1.0-height) * cgmath::vec3(1.0, 1.0, 1.0) + height * cgmath::vec3(0.5, 0.7, 1.0);
-        //color.cast().unwrap().map(|x: f64| (x * 255.999) as u32)
+        return (cgmath::vec3(1.0, 1.0, 1.0).map(|x: f64| (x * (1.0 - t))) + cgmath::vec3(0.5, 0.7, 1.0).map(|x: f64| (x * t))).map(|x: f64| (x * 255.999) as u32);    
     }
 }

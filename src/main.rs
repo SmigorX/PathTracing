@@ -23,14 +23,10 @@ fn open_file() -> File {
 
 fn objects() -> utils::hittable::HittableList {
     let mut world: utils::hittable::HittableList = utils::hittable::HittableList::new();
-    let sphere: utils::shapes::Sphere = utils::shapes::Sphere::new(cgmath::point3(-1.0, 1.5, -2.5), 1.0);
+    let sphere: utils::shapes::Sphere = utils::shapes::Sphere::new(cgmath::point3(0.0, 0.0, -2.0), 1.0);
     world.add(sphere);
-    let sphere2: utils::shapes::Sphere = utils::shapes::Sphere::new(cgmath::point3(1.0, 1.5, -2.5), 1.0);
-    world.add(sphere2);
-    let sphere3: utils::shapes::Sphere = utils::shapes::Sphere::new(cgmath::point3(-1.0, 1.0, -2.0), 0.5);
-    world.add(sphere3);
-    let sphere4: utils::shapes::Sphere = utils::shapes::Sphere::new(cgmath::point3(1.0, 1.0, -2.0), 0.5);
-    world.add(sphere4);
+    let sphere: utils::shapes::Sphere = utils::shapes::Sphere::new(cgmath::point3(1.0, 1.0, -2.0), 1.5);
+    world.add(sphere);
     return world
 }
 

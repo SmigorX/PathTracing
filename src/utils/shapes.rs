@@ -25,7 +25,6 @@ impl Hittable for Sphere {
         let c = line.magnitude2() - self.radius * self.radius;
         let discriminant = h * h - a * c;
 
-
         if discriminant < 0.0 {
             return false;
         }
@@ -47,3 +46,4 @@ impl Hittable for Sphere {
         return true;
     }
 }
+
